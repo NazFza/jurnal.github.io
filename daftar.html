@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar Jurnal Terapan</title>
+  <style>
+    .top-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin: 25px 0;
+    }
+
+    .filter-btn {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #dbeafe;
+      color: #1e3a8a;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .filter-btn:hover {
+      background: #93c5fd;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 450px;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      font-size: 1rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      color: #475569;
+      font-size: 1rem;
+    }
+
+    .section {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .section h2 {
+      color: #1d4ed8;
+      margin-bottom: 15px;
+      border-left: 6px solid #2563eb;
+      padding-left: 12px;
+    }
+
+    .journal-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .journal-card {
+      background: #eff6ff;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid #bfdbfe;
+      transition: 0.3s;
+    }
+
+    .journal-card:hover {
+      transform: translateY(-5px);
+      background: #dbeafe;
+    }
+
+    .journal-card h3 {
+      color: #1e3a8a;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .journal-card p {
+      color: #334155;
+      font-size: 0.92rem;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .btn-print {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .btn-print:hover {
+      background: #1d4ed8;
+    }
+
+    @media print {
+      .btn-print {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <h1>Daftar Jurnal Terapan</h1>
+      <p>
+        Kumpulan jurnal berkualitas tinggi untuk ekonometrika, riset operasi,
+        optimisasi infrastruktur, kebencanaan, machine learning, data science,
+        simulasi, dan data mining.
+      </p>
+
+      <a href="#" class="btn-print" onclick="window.print()">
+        Simpan / Export PDF
+      </a>
+
+      <div class="top-controls">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-box"
+          placeholder="Cari jurnal, publisher, atau bidang..."
+          onkeyup="searchJournal()"
+        />
+      </div>
+
+      <div class="top-controls">
+        <button class="filter-btn" onclick="filterCategory('all')">Semua</button>
+        <button class="filter-btn" onclick="filterCategory('elsevier')">Elsevier</button>
+        <button class="filter-btn" onclick="filterCategory('openaccess')">Open Access</button>
+        <button class="filter-btn" onclick="filterCategory('springer')">Springer</button>
+        <button class="filter-btn" onclick="filterCategory('ieee')">IEEE</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Ekonomi, Ekonometrika & Kebijakan Ekonomi</h2>
+
+      <div class="journal-list">
+        <div class="journal-card springer">
+          <h3>Econometrica</h3>
+          <p><strong>Publisher:</strong> Wiley</p>
+          <p><strong>Akses:</strong> Hybrid</p>
+          <p><a href="https://www.econometricsociety.org/publications/econometrica" target="_blank">Kunjungi Jurnal</a></p>
+          <p>Jurnal top untuk teori ekonometrika dan ekonomi kuantitatif.</p>
+        </div>
+
+        <div class="journal-card elsevier">
+          <h3>Journal of Econometrics</h3>
+          <p><strong>Publisher:</strong> Elsevier</p>
+          <p><strong>Akses:</strong> Hybrid</p>
+          <p><a href="https://www.sciencedirect.com/journal/journal-of-econometrics" target="_blank">Kunjungi Jurnal</a></p>
+          <p>Metode ekonometrika dan aplikasi empiris.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Econometric Theory</h3>
+          <p>Fokus teori statistik dan ekonometrika.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Journal of Applied Econometrics</h3>
+          <p>Fokus pada ekonometrika terapan dan analisis data ekonomi.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Applied Economics</h3>
+          <p>Penelitian ekonomi berbasis data dan kebijakan publik.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Empirical Economics</h3>
+          <p>Ekonomi empiris dan pemodelan statistik.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Regional Science and Urban Economics</h3>
+          <p>Ekonomi regional, perkotaan, dan spasial.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Energy Economics</h3>
+          <p>Ekonomi energi, kebijakan, dan infrastruktur.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Riset Operasi & Optimisasi</h2>
+
+      <div class="journal-list">
+        <div class="journal-card">
+          <h3>Operations Research</h3>
+          <p>Pemodelan matematis dan pengambilan keputusan.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Mathematical Programming</h3>
+          <p>Optimisasi matematis tingkat lanjut.</p>
+        </div>
+
+        <div class="journal-card elsevier">
+          <h3>European Journal of Operational Research</h3>
+          <p><strong>Publisher:</strong> Elsevier</p>
+          <p><strong>Akses:</strong> Hybrid</p>
+          <p><a href="https://www.sciencedirect.com/journal/european-journal-of-operational-research" target="_blank">Kunjungi Jurnal</a></p>
+          <p>Jurnal besar bidang riset operasi dan optimisasi.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>INFORMS Journal on Computing</h3>
+          <p>Komputasi dan optimisasi skala besar.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Computers & Operations Research</h3>
+          <p>Optimisasi komputasional dan aplikasi industri.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Omega</h3>
+          <p>Management science dan decision analytics.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Expert Systems with Applications</h3>
+          <p>AI dan sistem optimisasi terapan.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Annals of Operations Research</h3>
+          <p>Topik optimisasi, simulasi, dan sistem keputusan.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Engineering Optimization</h3>
+          <p>Optimisasi rekayasa dan sistem kompleks.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Optimisasi Infrastruktur & Transportasi</h2>
+
+      <div class="journal-list">
+        <div class="journal-card">
+          <h3>Transportation Research Part A</h3>
+          <p>Kebijakan dan praktik transportasi.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Transportation Research Part B</h3>
+          <p>Metodologi transportasi dan optimisasi jaringan.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Transportation Research Part C</h3>
+          <p>AI, machine learning, dan sistem transportasi cerdas.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Transport Policy</h3>
+          <p>Kebijakan transportasi dan tata kelola.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Journal of Infrastructure Systems</h3>
+          <p>Infrastruktur dan ketahanan sistem.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Infrastructure Complexity</h3>
+          <p>Kompleksitas sistem infrastruktur modern.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Sustainable Cities and Society</h3>
+          <p>Kota berkelanjutan dan smart infrastructure.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Utilities Policy</h3>
+          <p>Kebijakan utilitas dan infrastruktur publik.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Networks and Spatial Economics</h3>
+          <p>Optimisasi spasial dan jaringan ekonomi.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Bencana, Risiko & Ketahanan</h2>
+
+      <div class="journal-list">
+        <div class="journal-card">
+          <h3>Risk Analysis</h3>
+          <p>Analisis risiko sistem dan kebijakan.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Reliability Engineering & System Safety</h3>
+          <p>Keandalan sistem dan resilience.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Stochastic Environmental Research and Risk Assessment</h3>
+          <p>Risk assessment berbasis stochastic.</p>
+        </div>
+
+        <div class="journal-card elsevier openaccess">
+          <h3>International Journal of Disaster Risk Reduction</h3>
+          <p><strong>Publisher:</strong> Elsevier</p>
+          <p><strong>Akses:</strong> Banyak paper Open Access</p>
+          <p><a href="https://www.sciencedirect.com/journal/international-journal-of-disaster-risk-reduction" target="_blank">Kunjungi Jurnal</a></p>
+          <p>Mitigasi dan pengurangan risiko bencana.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Natural Hazards</h3>
+          <p>Risiko bencana alam dan pemodelan lingkungan.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Natural Hazards Review</h3>
+          <p>Mitigasi dan engineering kebencanaan.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Disasters</h3>
+          <p>Kebijakan dan humanitarian disaster management.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Disaster Prevention and Management</h3>
+          <p>Strategi pengurangan risiko dan manajemen bencana.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Logistik, Supply Chain & Humanitarian Logistics</h2>
+
+      <div class="journal-list">
+        <div class="journal-card">
+          <h3>Transportation Research Part E</h3>
+          <p>Logistik, supply chain, dan distribusi bantuan.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Journal of Humanitarian Logistics and Supply Chain Management</h3>
+          <p>Humanitarian logistics dan respon bencana.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Computers & Industrial Engineering</h3>
+          <p>Sistem industri dan optimisasi distribusi.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>International Journal of Production Economics</h3>
+          <p>Supply chain dan production systems.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>International Journal of Production Research</h3>
+          <p>Operations systems dan industrial optimization.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>IISE Transactions</h3>
+          <p>Industrial engineering dan analytics.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Journal of Business Logistics</h3>
+          <p>Business logistics dan distribusi modern.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Supply Chain Management: An International Journal</h3>
+          <p>Supply chain management dan strategi distribusi.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>International Journal of Logistics Management</h3>
+          <p>Manajemen logistik dan sistem transportasi.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Simulasi, Stokastik & Sistem Kompleks</h2>
+
+      <div class="journal-list">
+        <div class="journal-card">
+          <h3>Simulation Modelling Practice and Theory</h3>
+          <p>Simulasi sistem dan pemodelan praktis.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Journal of Simulation</h3>
+          <p>Metode simulasi dan analisis sistem.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Stochastic Processes and their Applications</h3>
+          <p>Proses stokastik dan probabilitas terapan.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Monte Carlo Methods and Applications</h3>
+          <p>Metode Monte Carlo dan simulasi probabilistik.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Methodology and Computing in Applied Probability</h3>
+          <p>Komputasi probabilitas terapan.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Complexity</h3>
+          <p>Sistem kompleks dan nonlinear systems.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Physica A: Statistical Mechanics and its Applications</h3>
+          <p>Statistical mechanics dan sistem kompleks.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Machine Learning & Data Science</h2>
+
+      <div class="journal-list">
+        <div class="journal-card">
+          <h3>Journal of Machine Learning Research</h3>
+          <p>Penelitian machine learning dan algoritma.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Machine Learning</h3>
+          <p>Teori dan implementasi machine learning.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>IEEE Transactions on Neural Networks and Learning Systems</h3>
+          <p>Neural network dan AI modern.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Applied Soft Computing</h3>
+          <p>Machine learning dan computational intelligence.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Knowledge-Based Systems</h3>
+          <p>Sistem cerdas dan AI terapan.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Pattern Recognition</h3>
+          <p>Pattern recognition dan computer vision.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Decision Support Systems</h3>
+          <p>Analitik data dan sistem keputusan.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Data & Knowledge Engineering</h3>
+          <p>Knowledge engineering dan data science.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Information Sciences</h3>
+          <p>AI, data science, dan intelligent systems.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Kebijakan Publik, Infrastruktur & Regional</h2>
+
+      <div class="journal-list">
+        <div class="journal-card">
+          <h3>Policy Sciences</h3>
+          <p>Kebijakan publik dan decision making.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Public Policy and Administration</h3>
+          <p>Administrasi publik dan tata kelola.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Socio-Economic Planning Sciences</h3>
+          <p>Kebijakan ekonomi dan optimisasi regional.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Government Information Quarterly</h3>
+          <p>Digital governance dan e-government.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Land Use Policy</h3>
+          <p>Penggunaan lahan dan kebijakan wilayah.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Data Mining, Data Wrangling & Big Data</h2>
+
+      <div class="journal-list">
+        <div class="journal-card">
+          <h3>Data Mining and Knowledge Discovery</h3>
+          <p>Data mining dan knowledge discovery.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Knowledge and Information Systems</h3>
+          <p>Knowledge systems dan big data analytics.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>ACM Transactions on Knowledge Discovery from Data</h3>
+          <p>KDD dan analisis data skala besar.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>IEEE Transactions on Knowledge and Data Engineering</h3>
+          <p>Big data dan data engineering.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Information Systems</h3>
+          <p>Data systems dan enterprise analytics.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Journal of Big Data</h3>
+          <p>Big data analytics dan preprocessing.</p>
+        </div>
+
+        <div class="journal-card">
+          <h3>Big Data Research</h3>
+          <p>Big data infrastructure dan data cleaning.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>
+        Dibuat untuk referensi belajar dan riset terapan bidang matematika,
+        data science, optimisasi, dan kebijakan.
+      </p>
+    </div>
+
+  </div>
+  <script>
+    function searchJournal() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.journal-card');
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function filterCategory(category) {
+      const cards = document.querySelectorAll('.journal-card');
+
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.style.display = 'block';
+        } else {
+          if (card.classList.contains(category)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
