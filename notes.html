@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tracker Baca Jurnal & Metode Riset</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f3f6fb;
+      color: #1e293b;
+      line-height: 1.6;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      color: #475569;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .section {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 28px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .section h2 {
+      color: #1d4ed8;
+      margin-bottom: 18px;
+      border-left: 6px solid #2563eb;
+      padding-left: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 18px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: #dbeafe;
+    }
+
+    .card h3 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin-top: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #2563eb;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      margin-top: 5px;
+      margin-right: 5px;
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .btn-print {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .btn-print:hover {
+      background: #1d4ed8;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #64748b;
+    }
+
+    @media print {
+      .btn-print {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <h1>Tracker Baca Jurnal & Metode Riset</h1>
+
+      <p>
+        Dashboard pribadi untuk mencatat jurnal yang sudah dibaca,
+        menemukan ide penelitian, memahami metode penelitian,
+        dan mencari paper yang relevan dengan topik riset.
+      </p>
+
+      <a href="#" class="btn-print" onclick="window.print()">
+        Simpan / Export PDF
+      </a>
+    </div>
+
+    <div class="section">
+      <h2>Metode Membaca Jurnal yang Efektif</h2>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>1. Baca Abstract Dulu</h3>
+          <p>
+            Fokus memahami:
+            tujuan penelitian, data, metode, dan hasil utama.
+          </p>
+
+          <span class="tag">Efisiensi</span>
+          <span class="tag">Seleksi Paper</span>
+        </div>
+
+        <div class="card">
+          <h3>2. Cari Research Gap</h3>
+          <p>
+            Perhatikan bagian:
+            limitation, future work, atau kelemahan model.
+          </p>
+
+          <span class="tag">Ide Penelitian</span>
+          <span class="tag">Gap Analysis</span>
+        </div>
+
+        <div class="card">
+          <h3>3. Fokus ke Metode</h3>
+          <p>
+            Catat metode statistik, optimisasi,
+            machine learning, atau simulasi yang digunakan.
+          </p>
+
+          <span class="tag">Metodologi</span>
+          <span class="tag">Modeling</span>
+        </div>
+
+        <div class="card">
+          <h3>4. Catat Dataset</h3>
+          <p>
+            Simpan sumber data, variabel penting,
+            preprocessing, dan teknik cleaning.
+          </p>
+
+          <span class="tag">Dataset</span>
+          <span class="tag">Data Science</span>
+        </div>
+
+        <div class="card">
+          <h3>5. Bandingkan Antar Paper</h3>
+          <p>
+            Cari perbedaan metode, hasil,
+            atau performa model antar jurnal.
+          </p>
+
+          <span class="tag">Literature Review</span>
+          <span class="tag">Benchmark</span>
+        </div>
+
+        <div class="card">
+          <h3>6. Simpan Insight Penting</h3>
+          <p>
+            Tulis ide yang muncul saat membaca:
+            kemungkinan pengembangan, kombinasi metode,
+            atau aplikasi baru.
+          </p>
+
+          <span class="tag">Research Idea</span>
+          <span class="tag">Innovation</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Checklist Analisis Paper</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Komponen</th>
+              <th>Yang Harus Dicek</th>
+              <th>Catatan</th>
+            </tr>
+          </thead>
+
+          <tbody id="paperTableBody">
+            <tr>
+              <td>Masalah Penelitian</td>
+              <td>Apa masalah utama yang ingin diselesaikan?</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Data</td>
+              <td>Jenis data, ukuran dataset, sumber data</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Metode</td>
+              <td>ML, optimisasi, econometrics, stochastic, simulasi</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Model</td>
+              <td>Algoritma atau model matematika yang digunakan</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Evaluasi</td>
+              <td>Accuracy, RMSE, objective function, dll</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Research Gap</td>
+              <td>Kelemahan atau peluang pengembangan</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Potensi Pengembangan</td>
+              <td>Ide lanjutan untuk penelitian baru</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Tambah Data Jurnal</h2>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Input Paper Baru</h3>
+
+          <p>Judul Paper</p>
+          <input type="text" id="judul" style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #cbd5e1;">
+
+          <p>Topik</p>
+          <input type="text" id="topik" style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #cbd5e1;">
+
+          <p>Metode</p>
+          <input type="text" id="metode" style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #cbd5e1;">
+
+          <p>Dataset</p>
+          <input type="text" id="dataset" style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #cbd5e1;">
+
+          <p>Insight Penting</p>
+          <textarea id="insight" style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #cbd5e1;height:90px;"></textarea>
+
+          <p>Ide Penelitian Baru</p>
+          <textarea id="ide" style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #cbd5e1;height:90px;"></textarea>
+
+          <p>Status</p>
+          <select id="status" style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #cbd5e1;">
+            <option>Belum</option>
+            <option>Sedang</option>
+            <option>Selesai</option>
+          </select>
+
+          <button onclick="tambahPaper()" style="margin-top:10px;padding:12px 18px;background:#2563eb;color:white;border:none;border-radius:10px;cursor:pointer;">
+            Simpan Paper
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Tracker Jurnal yang Sudah Dibaca</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Judul Paper</th>
+              <th>Topik</th>
+              <th>Metode</th>
+              <th>Dataset</th>
+              <th>Insight Penting</th>
+              <th>Ide Penelitian Baru</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Belum / Sedang / Selesai</td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Belum / Sedang / Selesai</td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Belum / Sedang / Selesai</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Strategi Mencari Ide Penelitian</h2>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Gabungkan Dua Bidang</h3>
+          <p>
+            Contoh:
+            machine learning + disaster logistics,
+            econometrics + transportasi,
+            stochastic + infrastruktur.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Perbaiki Metode Lama</h3>
+          <p>
+            Gunakan algoritma lebih baru atau
+            data lebih besar dari paper sebelumnya.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Gunakan Data Indonesia</h3>
+          <p>
+            Banyak paper internasional minim studi Indonesia,
+            sehingga ini bisa jadi nilai tambah.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Cari Kelemahan Paper</h3>
+          <p>
+            Fokus pada limitation atau asumsi model
+            yang terlalu sederhana.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Bandingkan Banyak Metode</h3>
+          <p>
+            Benchmark beberapa model untuk mencari
+            performa terbaik.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Gunakan Simulasi</h3>
+          <p>
+            Simulasi sering dipakai untuk:
+            bencana, transportasi, logistik, dan kebijakan.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>
+        Dashboard pribadi untuk pengembangan riset,
+        literature review, dan eksplorasi ide penelitian.
+      </p>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+  <script>
+    const supabaseUrl = 'GANTI_DENGAN_URL_SUPABASE_KAMU';
+    const supabaseKey = 'GANTI_DENGAN_ANON_KEY_KAMU';
+
+    const supabaseClient = window.supabase.createClient(
+      supabaseUrl,
+      supabaseKey
+    );
+
+    async function loadPapers() {
+      const { data, error } = await supabaseClient
+        .from('papers')
+        .select('*')
+        .order('id', { ascending: false });
+
+      if (error) {
+        console.error(error);
+        return;
+      }
+
+      const tableBody = document.getElementById('paperTableBody');
+      tableBody.innerHTML = '';
+
+      data.forEach(paper => {
+        const row = `
+          <tr>
+            <td>${paper.judul || ''}</td>
+            <td>${paper.topik || ''}</td>
+            <td>${paper.metode || ''}</td>
+            <td>${paper.dataset || ''}</td>
+            <td>${paper.insight || ''}</td>
+            <td>${paper.ide_riset || ''}</td>
+            <td>${paper.status || ''}</td>
+          </tr>
+        `;
+
+        tableBody.innerHTML += row;
+      });
+    }
+
+    async function tambahPaper() {
+      const judul = document.getElementById('judul').value;
+      const topik = document.getElementById('topik').value;
+      const metode = document.getElementById('metode').value;
+      const dataset = document.getElementById('dataset').value;
+      const insight = document.getElementById('insight').value;
+      const ide = document.getElementById('ide').value;
+      const status = document.getElementById('status').value;
+
+      const { error } = await supabaseClient
+        .from('papers')
+        .insert([
+          {
+            judul: judul,
+            topik: topik,
+            metode: metode,
+            dataset: dataset,
+            insight: insight,
+            ide_riset: ide,
+            status: status
+          }
+        ]);
+
+      if (error) {
+        alert('Gagal menyimpan data');
+        console.error(error);
+        return;
+      }
+
+      alert('Paper berhasil disimpan');
+
+      document.getElementById('judul').value = '';
+      document.getElementById('topik').value = '';
+      document.getElementById('metode').value = '';
+      document.getElementById('dataset').value = '';
+      document.getElementById('insight').value = '';
+      document.getElementById('ide').value = '';
+
+      loadPapers();
+    }
+
+    loadPapers();
+  </script>
+</body>
+</html>
